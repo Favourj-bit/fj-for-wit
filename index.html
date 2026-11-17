@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FJ for WiT President</title>
+<meta name="description" content="Favour James (FJ) for President of the Women in Tech Club, CMU-Africa. The B.U.I.L.D. agenda, achievements and community work. Vote Saturday, November 21st.">
+<meta property="og:title" content="FJ for WiT President">
+<meta property="og:description" content="It's time to B.U.I.L.D. Vote Favour James (FJ) for President of the Women in Tech Club, CMU-Africa, on Saturday, November 21st.">
+<meta property="og:image" content="assets/share-card.jpg">
+<meta name="theme-color" content="#0B1F4D">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<script>
+  // The page opens in black and white; the switch turns the colour on (like the campaign video).
+  (function () {
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) document.documentElement.classList.add('off');
+  })();
+</script>
+<style>
+:root {
+  /* FJ campaign palette: CMU red + WiT navy on a cool paper */
+  --navy: #16161D;
+  --red: #7C5CFF;
+  --rose: #B9A9FF;
+  --paper: #F7F6FC;
+  --ice: #EDE9FF;
+  --muted: #5D5B6E;
+  --line: rgba(22,22,29,0.12);
+  --green: #2FB457;
+  --display: "Anton", Impact, "Arial Narrow", sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  /* layout: one long editorial page, max 1180px, sections separated by thin navy rules */
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { margin: 0; background: var(--paper); color: var(--navy); font-family: var(--body); font-size: 17px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--red); text-underline-offset: 3px; }
+a:hover { color: var(--navy); }
+:focus-visible { outline: 3px solid var(--rose); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+.wrap { width: min(1180px, 100% - 40px); margin-inline: auto; }
+
+/* colour switch effect */
+.page { transition: filter 0.9s ease; }
+html.off .page { filter: grayscale(1) contrast(1.02); }
+
+/* ---------- nav ---------- */
+.nav { position: sticky; top: 0; z-index: 20; background: rgba(247,246,252,0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+.brand { font-family: var(--display); font-size: 26px; letter-spacing: 0.02em; color: var(--navy); text-decoration: none; }
+.brand span { color: var(--red); }
+.nav ul { display: flex; gap: 22px; list-style: none; margin: 0 0 0 auto; padding: 0; font-size: 14px; font-weight: 600; }
+.nav ul a { color: var(--navy); text-decoration: none; }
+.nav ul a:hover { color: var(--red); }
+.nav .vote-pill { background: var(--red); color: #fff; padding: 9px 16px; border-radius: 999px; font-size: 14px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+.nav .vote-pill:hover { background: var(--navy); color: #fff; }
+@media (max-width: 860px) { .nav ul { display: none; } .nav .vote-pill { margin-left: auto; } }
+
+/* ---------- hero ---------- */
+.hero { padding: 56px 0 40px; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 40px; align-items: center; }
+.eyebrow { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--red); }
+.lockup { height: 44px; width: auto; margin-bottom: 26px; }
+.hero h1 { font-family: var(--display); font-weight: 400; font-size: clamp(64px, 9.6vw, 132px); line-height: 0.9; letter-spacing: 0.005em; margin-top: 14px; }
+.hero h1 .r { color: var(--red); }
+.letters { display: flex; gap: 8px; margin: 22px 0 6px; }
+.letters a { width: 54px; height: 62px; display: grid; place-items: center; background: var(--navy); color: #fff; font-family: var(--display); font-size: 34px; text-decoration: none; border-radius: 8px; transition: transform 0.2s, background 0.2s; }
+.letters a:nth-child(even) { background: var(--red); }
+.letters a:hover { transform: translateY(-4px); }
+.hero .name { font-size: clamp(22px, 2.6vw, 28px); font-weight: 800; margin-top: 18px; }
+.hero .name span { color: var(--red); }
+.hero p.sub { max-width: 56ch; color: var(--muted); margin: 10px 0 24px; }
+.ctas { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; border-radius: 999px; font-weight: 700; font-size: 15px; text-decoration: none; border: 2px solid var(--navy); color: var(--navy); }
+.btn.solid { background: var(--navy); color: #fff; }
+.btn:hover { background: var(--red); border-color: var(--red); color: #fff; }
+
+/* the switch */
+.switch-row { display: flex; align-items: center; gap: 14px; margin-top: 26px; font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.06em; color: var(--muted); }
+.switch { position: relative; width: 74px; height: 42px; border-radius: 999px; border: 0; padding: 0; cursor: pointer; background: #E1DEEE; transition: background 0.35s; flex-shrink: 0; }
+.switch::after { content: ""; position: absolute; top: 4px; left: 4px; width: 34px; height: 34px; border-radius: 50%; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: transform 0.35s cubic-bezier(.3,1.4,.6,1); }
+.switch[aria-checked="true"] { background: var(--green); }
+.switch[aria-checked="true"]::after { transform: translateX(32px); }
+
+.portrait { position: relative; aspect-ratio: 1 / 1.1; width: 100%; max-width: 470px; margin: 24px 0 0 auto; }
+.portrait .disc { position: absolute; inset: 8% 0 0 2%; border-radius: 50%; background: var(--red); }
+.portrait .ring { position: absolute; inset: 2% -5% -6% -4%; border-radius: 50%; border: 2px solid var(--line); }
+.portrait img { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; height: auto; }
+.portrait .badge { position: absolute; left: -12%; bottom: 4%; background: var(--navy); color: #fff; padding: 12px 16px; border-radius: 10px; font-size: 13px; line-height: 1.35; box-shadow: 0 12px 30px rgba(22,22,29,0.25); }
+.portrait .badge b { display: block; font-family: var(--display); font-weight: 400; font-size: 26px; color: var(--rose); letter-spacing: 0.02em; }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; }
+  .portrait { max-width: 380px; margin: 10px auto 0; }
+  .portrait .badge { left: 0; }
+}
+
+/* ---------- stats ---------- */
+.stats { background: var(--navy); color: #fff; }
+.stats ul { list-style: none; margin: 0; padding: 30px 0; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 18px; }
+.stats li { border-left: 2px solid var(--rose); padding-left: 14px; }
+.stats b { display: block; font-family: var(--display); font-weight: 400; font-size: 42px; line-height: 1; letter-spacing: 0.01em; font-variant-numeric: tabular-nums; }
+.stats span { display: block; font-size: 13.5px; line-height: 1.4; color: #CFCBE3; margin-top: 8px; }
+@media (max-width: 960px) { .stats ul { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .stats ul { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* ---------- sections ---------- */
+section.block { padding: 84px 0; border-bottom: 1px solid var(--line); }
+.sec-head { display: grid; grid-template-columns: 220px 1fr; gap: 32px; margin-bottom: 40px; align-items: end; }
+.sec-head .num { font-family: var(--mono); font-size: 13px; font-weight: 700; letter-spacing: 0.12em; color: var(--red); text-transform: uppercase; }
+.sec-head h2 { font-family: var(--display); font-weight: 400; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; letter-spacing: 0.005em; }
+.sec-head p { grid-column: 2; max-width: 62ch; color: var(--muted); margin: 14px 0 0; }
+@media (max-width: 760px) { .sec-head { grid-template-columns: 1fr; gap: 8px; } .sec-head p { grid-column: 1; } section.block { padding: 64px 0; } }
+
+/* about */
+.about { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; }
+.about p { max-width: 62ch; margin: 0 0 16px; }
+.about .big { font-size: 22px; line-height: 1.45; font-weight: 600; }
+.facts { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--navy); }
+.facts li { padding: 14px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 120px 1fr; gap: 12px; font-size: 15px; }
+.facts li span:first-child { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 3px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.links a { font-size: 14px; font-weight: 700; padding: 8px 14px; border: 1.5px solid var(--line); border-radius: 999px; text-decoration: none; color: var(--navy); background: #fff; }
+.links a:hover { border-color: var(--red); color: var(--red); }
+@media (max-width: 860px) { .about { grid-template-columns: 1fr; } }
+
+/* achievements */
+.ach { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
+.ach-group h3 { font-size: 14px; font-family: var(--mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--red); padding-bottom: 10px; border-bottom: 2px solid var(--navy); }
+.ach-group ol { list-style: none; margin: 0; padding: 0; }
+.ach-group li { display: grid; grid-template-columns: 64px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.ach-group .yr { font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--muted); padding-top: 2px; font-variant-numeric: tabular-nums; }
+.ach-group strong { display: block; font-size: 16.5px; line-height: 1.35; }
+.ach-group .meta { display: block; font-size: 14.5px; color: var(--muted); margin-top: 4px; }
+.award { display: inline-block; font-size: 11.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; background: var(--red); color: #fff; padding: 2px 8px; border-radius: 4px; margin-left: 4px; vertical-align: 2px; }
+.award.soft { background: var(--ice); color: var(--navy); }
+.go { font-weight: 700; font-size: 14px; white-space: nowrap; }
+.feature { grid-column: 1 / -1; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; background: var(--navy); color: #fff; border-radius: 16px; padding: 28px 32px; }
+.feature .k { font-family: var(--display); font-size: 88px; line-height: 0.85; color: var(--rose); }
+.feature p { margin: 6px 0 0; color: #CFCBE3; max-width: 70ch; }
+.feature a { color: var(--rose); }
+.feature strong { font-size: 20px; }
+@media (max-width: 860px) { .ach { grid-template-columns: 1fr; } .feature { grid-template-columns: 1fr; gap: 10px; } }
+
+/* community timeline */
+.timeline { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 26px 28px 18px; margin-bottom: 56px; }
+.tl-head { display: grid; grid-template-columns: minmax(220px, 34%) 1fr; gap: 20px; align-items: end; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.tl-head .title { font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+.axis { position: relative; height: 44px; }
+.tick { position: absolute; bottom: 0; font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--muted); padding-left: 6px; border-left: 1px solid var(--line); height: 18px; line-height: 18px; }
+.mark { position: absolute; top: 0; transform: translateX(-50%); font-size: 11px; font-weight: 800; color: var(--red); white-space: nowrap; display: flex; flex-direction: column; align-items: center; }
+.mark i { display: block; width: 8px; height: 8px; background: var(--red); border-radius: 50%; margin-top: 3px; order: 2; }
+.roles { list-style: none; margin: 0; padding: 0; }
+.role { display: grid; grid-template-columns: minmax(220px, 34%) 1fr; gap: 20px; align-items: center; padding: 14px 0; border-bottom: 1px solid var(--line); }
+.role:last-child { border-bottom: 0; }
+.role-text strong { display: block; font-size: 16px; }
+.role-text span { display: block; font-size: 14px; font-weight: 600; color: var(--red); }
+.role-text small { display: block; font-size: 13px; color: var(--muted); line-height: 1.45; margin-top: 3px; }
+.track { position: relative; height: 18px; background: repeating-linear-gradient(90deg, var(--ice) 0 1px, transparent 1px calc(100% / 13)); border-radius: 4px; }
+.bar { position: absolute; top: 0; bottom: 0; background: var(--navy); border-radius: 4px; }
+.role:nth-child(even) .bar { background: var(--red); }
+@media (max-width: 760px) {
+  .tl-head { grid-template-columns: 1fr; } .tl-head .title { display: none; }
+  .role { grid-template-columns: 1fr; gap: 8px; }
+  .timeline { padding: 18px 16px 10px; }
+}
+
+/* bento collages */
+.collage { margin-bottom: 56px; }
+.collage-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 20px; margin-bottom: 16px; }
+.collage-head h3 { font-family: var(--display); font-weight: 400; font-size: 38px; letter-spacing: 0.01em; }
+.collage-head p { margin: 0; color: var(--muted); font-size: 15px; max-width: 60ch; }
+.bento { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 210px; }
+.tile { margin: 0; position: relative; border-radius: 12px; overflow: hidden; background: var(--ice); }
+.tile .open { all: unset; cursor: zoom-in; display: block; width: 100%; height: 100%; }
+.tile .open:focus-visible { outline: 3px solid var(--rose); outline-offset: -3px; }
+.tile img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+.tile:hover img { transform: scale(1.04); }
+.chip { position: absolute; left: 10px; bottom: 10px; right: 10px; width: fit-content; max-width: calc(100% - 20px); background: var(--navy); color: #fff; font-size: 12.5px; font-weight: 700; padding: 6px 10px; border-radius: 6px; line-height: 1.3; pointer-events: none; }
+.b-out .t1, .b-speak .t1 { grid-row: span 2; }
+.b-out .t2, .b-speak .t2 { grid-column: span 2; }
+.b-out .t1 img { object-position: 30% 40%; }
+.b-out .t4 img, .b-speak .t4 img { object-position: center 20%; }
+.b-moments { grid-template-columns: 1fr 1.6fr; grid-auto-rows: 360px; }
+.b-moments .t1 img { object-position: center 40%; }
+@media (max-width: 760px) {
+  .bento, .b-moments { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 170px; }
+  .b-out .t1, .b-speak .t1 { grid-row: span 2; grid-column: span 1; }
+  .b-moments .t1, .b-moments .t2 { grid-row: span 2; }
+}
+
+/* agenda */
+.keep { display: grid; grid-template-columns: 220px 1fr; gap: 32px; background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 24px 28px; margin-bottom: 36px; align-items: center; }
+.keep h3 { font-family: var(--display); font-weight: 400; font-size: 30px; line-height: 1; }
+.keep ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.keep li { background: var(--ice); padding: 8px 14px; border-radius: 999px; font-weight: 700; font-size: 14.5px; }
+.keep li::before { content: "✓"; color: var(--green); margin-right: 6px; }
+@media (max-width: 760px) { .keep { grid-template-columns: 1fr; gap: 12px; } }
+.pillar { display: grid; grid-template-columns: 220px 1fr; gap: 32px; padding: 34px 0; border-top: 2px solid var(--navy); scroll-margin-top: 80px; }
+.pillar-letter { font-family: var(--display); font-size: 180px; line-height: 0.8; color: var(--red); }
+.pillar:nth-of-type(even) .pillar-letter { color: var(--navy); }
+.pillar h3 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 4vw, 48px); line-height: 1; letter-spacing: 0.01em; }
+.pillar .lead { font-size: 18px; color: var(--muted); margin: 8px 0 18px; }
+.pillar ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.pillar li { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+.pillar li strong { display: block; font-size: 16px; line-height: 1.3; }
+.pillar li span { display: block; font-size: 14.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+@media (max-width: 760px) { .pillar { grid-template-columns: 1fr; gap: 6px; } .pillar-letter { font-size: 110px; } }
+
+/* accountability */
+.acc { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: start; }
+.acc p { max-width: 56ch; margin: 0 0 14px; }
+.acc .quote { font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1; color: var(--red); margin-bottom: 18px; }
+table.trk { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; font-size: 15px; }
+.trk th { text-align: left; font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding: 12px 16px; background: var(--ice); }
+.trk td { padding: 12px 16px; border-top: 1px solid var(--line); }
+.trk td:nth-child(2) { color: var(--muted); }
+.lt { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 6px; background: var(--navy); color: #fff; font-family: var(--display); font-size: 16px; }
+@media (max-width: 860px) { .acc { grid-template-columns: 1fr; } }
+
+/* vote */
+.vote { background: var(--navy); color: #fff; padding: 90px 0 70px; text-align: left; }
+.vote .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: end; }
+.vote .eyebrow { color: var(--rose); }
+.vote h2 { font-family: var(--display); font-weight: 400; font-size: clamp(60px, 9vw, 120px); line-height: 0.9; margin-top: 12px; }
+.vote h2 span { color: var(--rose); }
+.vote p { color: #CFCBE3; max-width: 54ch; }
+.date-card { background: #fff; color: var(--navy); border-radius: 16px; padding: 24px 26px; }
+.date-card .d { font-family: var(--display); font-size: 64px; line-height: 0.9; color: var(--red); }
+.date-card .count { font-family: var(--mono); font-size: 13px; font-weight: 700; margin-top: 10px; color: var(--muted); min-height: 1.4em; }
+.share { margin-top: 18px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.share button { font: inherit; font-weight: 700; font-size: 15px; padding: 12px 20px; border-radius: 999px; border: 0; background: var(--red); color: #fff; cursor: pointer; }
+.share button:hover { background: var(--rose); color: var(--navy); }
+.share output { font-size: 14px; color: var(--muted); }
+footer { background: var(--navy); color: #9592AE; font-size: 13.5px; padding: 0 0 40px; }
+footer .wrap { border-top: 1px solid rgba(255,255,255,0.14); padding-top: 22px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
+footer a { color: #CFCBE3; }
+@media (max-width: 860px) { .vote .wrap { grid-template-columns: 1fr; } }
+
+/* lightbox */
+dialog.lb { border: 0; padding: 0; background: transparent; max-width: min(1100px, 94vw); max-height: 94vh; }
+dialog.lb::backdrop { background: rgba(10,10,16,0.9); }
+.lb figure { margin: 0; display: grid; gap: 12px; }
+.lb img { max-height: 78vh; width: auto; margin: 0 auto; border-radius: 10px; }
+.lb figcaption { color: #F0EEFA; font-size: 15px; text-align: center; max-width: 70ch; margin: 0 auto; }
+.lb .ctrl { display: flex; justify-content: center; gap: 10px; }
+.lb button { font: inherit; font-weight: 700; font-size: 14px; background: #fff; color: var(--navy); border: 0; border-radius: 999px; padding: 9px 16px; cursor: pointer; }
+.lb button:hover { background: var(--rose); }
+
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top">F<span>J</span></a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#agenda">B.U.I.L.D. Agenda</a></li>
+      <li><a href="#accountability">Accountability</a></li>
+    </ul>
+    <a class="vote-pill" href="#vote">Vote Nov 21</a>
+  </div>
+</nav>
+
+<div class="page">
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <img class="lockup" src="assets/cmu-wit-lockup.png" alt="Carnegie Mellon University Africa, Women in Tech">
+      <div class="eyebrow">WiT Elections 2026 · Presidential candidate</div>
+      <h1>It&#8217;s time to <span class="r">B.U.I.L.D.</span></h1>
+      <nav class="letters" aria-label="Jump to an agenda letter">
+        <a href="#agenda-b" title="Beyond the Classroom">B</a>
+        <a href="#agenda-u" title="Unlock Careers">U</a>
+        <a href="#agenda-i" title="Innovate &amp; Open Source">I</a>
+        <a href="#agenda-l" title="Link with Women Leading in Tech">L</a>
+        <a href="#agenda-d" title="Deliver &amp; Stay Accountable">D</a>
+      </nav>
+      <div class="name">Favour James <span>(FJ)</span> for WiT President</div>
+      <p class="sub">ML engineer, two-time Google Summer of Code participant and community builder. Our club has done amazing things. I want to keep what works and build on that foundation, together.</p>
+      <div class="ctas">
+        <a class="btn solid" href="#agenda">Read the B.U.I.L.D. agenda</a>
+        <a class="btn" href="#community">See my community work</a>
+      </div>
+      <div class="switch-row">
+        <button class="switch" id="switch" role="switch" aria-checked="true" aria-label="Turn the colour on"></button>
+        <span id="switch-label">IT&#8217;S B.U.I.L.D. TIME</span>
+      </div>
+    </div>
+    <div class="portrait">
+      <div class="ring"></div>
+      <div class="disc"></div>
+      <img src="assets/fj-headshot.webp" alt="Portrait of Favour James smiling, in a light blue blazer" width="815" height="809">
+      <div class="badge"><b>2x GSoC</b>Google Summer of Code<br>2023 and 2024</div>
+    </div>
+  </div>
+</header>
+
+<section class="stats" aria-label="At a glance">
+  <div class="wrap">
+    <ul>
+      <li><b>2x</b><span>Google Summer of Code participant</span></li>
+      <li><b>6</b><span>Awards and hackathon wins</span></li>
+      <li><b>3,000+</b><span>Downloads of my open graph dataset</span></li>
+      <li><b>~100</b><span>Secondary school girls reached in one outreach</span></li>
+      <li><b>~50</b><span>Students trained at AI Invasion</span></li>
+      <li><b>3+</b><span>Years leading tech communities</span></li>
+    </ul>
+  </div>
+</section>
+
+<main>
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">01 · About</div><h2>Hi, I&#8217;m FJ.</h2></div>
+    <div class="about">
+      <div>
+        <p class="big">I&#8217;m a machine learning engineer and researcher from Nigeria, and I believe community is what turns potential into a career.</p>
+        <p>I&#8217;m studying for an MSc in Engineering Artificial Intelligence here at CMU-Africa. My research is about reliable, trustworthy AI: factuality, evaluation, robustness and knowledge graphs.</p>
+        <p>Before CMU-Africa, I spent a year as a Machine Learning Engineer at the Cytoscape Consortium, turning my Google Summer of Code project into <a href="https://github.com/ndexbio/llm-text-to-knowledge-graph">textToKnowledgeGraph</a>, a tool that converts scientific papers into knowledge graphs that biologists can explore.</p>
+        <p>None of that happened alone. IEEE, GDSC, AWS Cloud Club and Data Science Nigeria at OAU are where I learned to build, lead and speak. Now I want to give that back, especially to women in STEM, so every one of us can reach our highest potential.</p>
+        <div class="links">
+          <a href="https://www.linkedin.com/in/favour-james-1868b61b9">LinkedIn</a>
+          <a href="https://github.com/Favourj-bit">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=oZzLBLYAAAAJ">Google Scholar</a>
+          <a href="https://favourj-bit.github.io/">Academic portfolio</a>
+        </div>
+      </div>
+      <ul class="facts">
+        <li><span>Now</span><span>MSc Engineering AI, CMU-Africa (2026 to 2028)</span></li>
+        <li><span>Before</span><span>BSc Electronic and Electrical Engineering, Obafemi Awolowo University (2024)</span></li>
+        <li><span>Work</span><span>Machine Learning Engineer, Cytoscape Consortium (2024 to 2025)</span></li>
+        <li><span>Focus</span><span>LLMs, knowledge graphs, evaluation, NLP for African languages</span></li>
+        <li><span>Email</span><span><a href="mailto:favour.ujames196@gmail.com">favour.ujames196@gmail.com</a></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="achievements">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">02 · Achievements</div><h2>What I&#8217;ve built</h2><p>Research, open source, awards and stages. Every item links to proof where it exists.</p></div>
+    <div class="ach">
+      <div class="feature">
+        <div class="k">2x</div>
+        <div><strong>Google Summer of Code, 2023 and 2024</strong>
+          <p>Both times with the National Resource for Network Biology. In <a href="https://summerofcode.withgoogle.com/archive/2023/projects/NBZn0Zm3">2023</a> I built the BrcaTcga graph dataset, now part of the official <a href="https://pytorch-geometric.readthedocs.io/en/stable/generated/torch_geometric.datasets.BrcaTcga.html">PyTorch Geometric</a> library with 3,000+ downloads on <a href="https://zenodo.org/records/8251328">Zenodo</a>. In <a href="https://summerofcode.withgoogle.com/archive/2024/projects/biCyAipp">2024</a> I built an LLM pipeline that turns scientific papers into knowledge graphs, which became my full-time role.</p></div>
+      </div>
+
+      <div class="ach-group">
+        <h3>Research &amp; publications</h3>
+        <ol>
+          <li><span class="yr">2026</span><div><strong>textToKnowledgeGraph: Generation of Molecular Interaction Knowledge Graphs Using Large Language Models for Exploration in Cytoscape</strong><span class="meta">Bioinformatics (journal), first author · <a class="go" href="https://doi.org/10.1093/bioinformatics/btag031">Read the paper →</a></span></div></li>
+          <li><span class="yr">2026</span><div><strong>Accepted at the Women in Machine Learning (WiML) Workshop, NeurIPS 2026</strong><span class="meta">For the textToKnowledgeGraph work</span></div></li>
+          <li><span class="yr">2025</span><div><strong>Evaluating Robustness of LLMs to Typographical Noise in Yorùbá QA <span class="award">Best Paper</span></strong><span class="meta">AfricaNLP Workshop at ACL 2025 · <a class="go" href="https://aclanthology.org/2025.africanlp-1.29/">Read the paper →</a></span></div></li>
+        </ol>
+      </div>
+
+      <div class="ach-group">
+        <h3>Awards &amp; wins</h3>
+        <ol>
+          <li><span class="yr">2025</span><div><strong>Best Paper Award <span class="award">Award</span></strong><span class="meta">AfricaNLP Workshop at ACL 2025</span></div></li>
+          <li><span class="yr">2025</span><div><strong>ISCB Fellowship Grant <span class="award soft">Grant</span></strong><span class="meta">ISMB/ECCB 2025, Liverpool</span></div></li>
+          <li><span class="yr">2024</span><div><strong>1st place, Beauty AI Hackathon (yShade.ai) <span class="award">Winner</span></strong><span class="meta">DermaLog, a skin-tone analysis app · <a class="go" href="https://www.linkedin.com/posts/emmanuel-acheampong_exciting-news-huge-congratulations-to-activity-7154517939788890113-j-SB/">Announcement →</a> <a class="go" href="https://github.com/Favourj-bit/DermaLog">Code →</a></span></div></li>
+          <li><span class="yr">2023</span><div><strong>Poster Award, Deep Learning Indaba 2023 <span class="award">Award</span></strong><span class="meta">For my GSoC 2023 graph neural network work · <a class="go" href="https://lnkd.in/p/dddCD2Gq">Watch the video →</a></span></div></li>
+          <li><span class="yr">2023</span><div><strong>Best Poster Award, DSN AI Bootcamp 2023 <span class="award">Award</span></strong><span class="meta">For my GSoC 2023 graph neural network work · <a class="go" href="https://lnkd.in/p/depf7vh4">Announcement →</a></span></div></li>
+          <li><span class="yr">2023</span><div><strong>1st place, SPE-OAU Energy Hackathon <span class="award">Winner</span></strong><span class="meta">Society of Petroleum Engineers, OAU student chapter. Ranked 1st on the final Zindi leaderboard · <a class="go" href="https://zindi.world/competitions/speoau-data-hackathon/leaderboard">Leaderboard →</a></span></div></li>
+        </ol>
+      </div>
+
+      <div class="ach-group">
+        <h3>Talks &amp; stages</h3>
+        <ol>
+          <li><span class="yr">2025</span><div><strong>Panelist, DataFest Africa 2025</strong><span class="meta">Black (African) Excellence Meets Global Impact: the four pillars of open source success in Data and AI. Lagos.</span></div></li>
+          <li><span class="yr">2025</span><div><strong>Talk at ISMB/ECCB 2025 (BOSC)</strong><span class="meta">textToKnowledgeGraph, Liverpool, UK · <a class="go" href="https://www.iscb.org/ismbeccb2025/programme-agenda/scientific-programme/bosc">Programme →</a></span></div></li>
+          <li><span class="yr">2025</span><div><strong>Poster, Deep Learning Indaba 2025</strong><span class="meta">textToKnowledgeGraph, Kigali</span></div></li>
+          <li><span class="yr">2023</span><div><strong>Lanfrica Talks</strong><span class="meta">Generating a PyTorch Geometric dataset for graph neural networks · <a class="go" href="https://www.youtube.com/watch?v=1wqbhOIX6I4">Watch →</a></span></div></li>
+        </ol>
+      </div>
+
+      <div class="ach-group">
+        <h3>Open source &amp; work</h3>
+        <ol>
+          <li><span class="yr">2024/25</span><div><strong>Machine Learning Engineer, Cytoscape Consortium</strong><span class="meta">Built textToKnowledgeGraph into a production Python package and a Cytoscape Web tool. It extracted 67 statements vs. 27 from the INDRA baseline on the same papers. <a class="go" href="https://github.com/ndexbio/llm-text-to-knowledge-graph">Code →</a></span></div></li>
+          <li><span class="yr">2024</span><div><strong>GSoC 2024, National Resource for Network Biology</strong><span class="meta">LLM-based knowledge graph extraction; grounding entities raised precision by 18%</span></div></li>
+          <li><span class="yr">2023</span><div><strong>GSoC 2023, National Resource for Network Biology</strong><span class="meta">BrcaTcga dataset, merged into PyTorch Geometric</span></div></li>
+          <li><span class="yr">Writing</span><div><strong>GSoC&#8217;23 Chronicles and other articles</strong><span class="meta"><a class="go" href="https://medium.com/@favour.ujames196">Read on Medium →</a></span></div></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="community">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">03 · Community</div><h2>Where I learned to lead</h2><p>From October 2021 until I graduated from OAU in December 2024, I was always serving in one tech community or another. Here&#8217;s the timeline, and the moments that mattered.</p></div>
+
+    <div class="timeline">
+      <div class="tl-head"><div class="title">Role · October 2021 to December 2024</div><div class="axis"><span class="tick" style="left:7.692%">2022</span><span class="tick" style="left:38.462%">2023</span><span class="tick" style="left:69.231%">2024</span><span class="mark" style="left:14.103%"><i></i>IWD 2022</span><span class="mark" style="left:73.077%"><i></i>Hangout</span><span class="mark" style="left:83.333%"><i></i>Outreach</span></div></div>
+      <ol class="roles">
+<li class="role">
+  <div class="role-text"><strong>General Secretary</strong><span>IEEE OAU Student Branch</span><small>Oct 2021 to Dec 2023 · Kept branch activities running under IEEE branch policies.</small></div>
+  <div class="track" aria-hidden="true"><div class="bar" style="left:0.000%;width:69.231%"></div></div>
+</li>
+<li class="role">
+  <div class="role-text"><strong>Core Team Lead</strong><span>Data Science Nigeria, OAU</span><small>2022 to 2024 · Part of the core team running the DSN community at OAU.</small></div>
+  <div class="track" aria-hidden="true"><div class="bar" style="left:7.692%;width:92.308%"></div></div>
+</li>
+<li class="role">
+  <div class="role-text"><strong>AI Tutor, AI Invasion</strong><span>Data Science Nigeria</span><small>Jun 2022 to Jun 2024 · Taught in two editions of AI Invasion. About 50 students trained.</small></div>
+  <div class="track" aria-hidden="true"><div class="bar" style="left:20.513%;width:64.103%"></div></div>
+</li>
+<li class="role">
+  <div class="role-text"><strong>Competitions Lead</strong><span>Google Developer Student Club, OAU</span><small>Aug 2022 to Aug 2023 · Helped members find, prepare for and enter competitions.</small></div>
+  <div class="track" aria-hidden="true"><div class="bar" style="left:25.641%;width:33.333%"></div></div>
+</li>
+<li class="role">
+  <div class="role-text"><strong>Event Coordinator</strong><span>AWS Cloud Club, OAU</span><small>May 2023 to Dec 2023 · Planned club events and hackathons.</small></div>
+  <div class="track" aria-hidden="true"><div class="bar" style="left:48.718%;width:20.513%"></div></div>
+</li>
+<li class="role">
+  <div class="role-text"><strong>Women in Engineering Lead</strong><span>IEEE OAU Student Branch</span><small>Jan 2024 to Dec 2024 · Led the WIE branch: outreach, hangouts and programs for women in engineering.</small></div>
+  <div class="track" aria-hidden="true"><div class="bar" style="left:69.231%;width:30.769%"></div></div>
+</li>
+      </ol>
+    </div>
+
+    <div class="collage">
+      <div class="collage-head"><h3>Outreach</h3><p>WIE Outreach 2024 to Moremi High School, Ile-Ife, on June 27. About 100 girls from SS1 to SS3, and one message: you belong in tech.</p></div>
+      <div class="bento b-out"><figure class="tile t1">
+  <button type="button" class="open" data-gallery="out" data-index="0" data-src="assets/outreach-speaking.jpg" data-cap="WIE Outreach 2024, Moremi High School, Ile-Ife. Talking with the girls about tech careers." aria-label="Enlarge: Talking tech with SS1 to SS3 girls">
+    <img src="assets/outreach-speaking.jpg" alt="Favour speaking with a microphone to a hall of secondary school girls in blue uniforms" loading="lazy">
+  </button>
+  <figcaption class="chip">Talking tech with SS1 to SS3 girls</figcaption>
+</figure>
+<figure class="tile t2">
+  <button type="button" class="open" data-gallery="out" data-index="1" data-src="assets/outreach-team.jpg" data-cap="The IEEE WIE OAU team with a member of staff at Moremi High School, June 27, 2024." aria-label="Enlarge: The WIE team at Moremi">
+    <img src="assets/outreach-team.jpg" alt="The IEEE WIE OAU team in purple shirts standing with a teacher in front of Moremi High School" loading="lazy">
+  </button>
+  <figcaption class="chip">The WIE team at Moremi</figcaption>
+</figure>
+<figure class="tile t3">
+  <button type="button" class="open" data-gallery="out" data-index="2" data-src="assets/outreach-group.jpg" data-cap="Students and the WIE team after the session. About 100 girls from SS1 to SS3 took part." aria-label="Enlarge: About 100 girls reached">
+    <img src="assets/outreach-group.jpg" alt="Students and WIE volunteers posing together in front of an IEEE WIE banner" loading="lazy">
+  </button>
+  <figcaption class="chip">About 100 girls reached</figcaption>
+</figure>
+<figure class="tile t4">
+  <button type="button" class="open" data-gallery="out" data-index="3" data-src="assets/outreach-flyer.jpg" data-cap="Flyer for the WIE 2024 Outreach, June 27, 11 AM, Ile-Ife." aria-label="Enlarge: The outreach flyer">
+    <img src="assets/outreach-flyer.jpg" alt="Event flyer for the WIE 2024 Outreach to Moremi High School on June 27" loading="lazy">
+  </button>
+  <figcaption class="chip">The outreach flyer</figcaption>
+</figure></div>
+    </div>
+
+    <div class="collage">
+      <div class="collage-head"><h3>On stage</h3><p>Sharing my work and the open source story, from Liverpool to Lagos.</p></div>
+      <div class="bento b-speak"><figure class="tile t1">
+  <button type="button" class="open" data-gallery="speak" data-index="0" data-src="assets/ismb-talk.jpg" data-cap="Presenting textToKnowledgeGraph at ISMB/ECCB 2025 (BOSC track), Liverpool, UK." aria-label="Enlarge: ISMB/ECCB 2025, Liverpool">
+    <img src="assets/ismb-talk.jpg" alt="Favour on stage pointing at a slide about LLM-as-a-judge semantic similarity" loading="lazy">
+  </button>
+  <figcaption class="chip">ISMB/ECCB 2025, Liverpool</figcaption>
+</figure>
+<figure class="tile t2">
+  <button type="button" class="open" data-gallery="speak" data-index="1" data-src="assets/ismb-room.jpg" data-cap="The textToKnowledgeGraph talk at ISMB/ECCB 2025." aria-label="Enlarge: A full room at ISMB">
+    <img src="assets/ismb-room.jpg" alt="A full conference room watching Favour present her title slide" loading="lazy">
+  </button>
+  <figcaption class="chip">A full room at ISMB</figcaption>
+</figure>
+<figure class="tile t3">
+  <button type="button" class="open" data-gallery="speak" data-index="2" data-src="assets/datafest-panel.jpg" data-cap="Panel: Black (African) Excellence Meets Global Impact, the four pillars of open source success in Data and AI. Lagos, October 18, 2025." aria-label="Enlarge: Panelist, DataFest Africa 2025">
+    <img src="assets/datafest-panel.jpg" alt="Favour speaking on a panel at DataFest Africa 2025" loading="lazy">
+  </button>
+  <figcaption class="chip">Panelist, DataFest Africa 2025</figcaption>
+</figure>
+<figure class="tile t4">
+  <button type="button" class="open" data-gallery="speak" data-index="3" data-src="assets/datafest-portrait.jpg" data-cap="At DataFest Africa 2025 in Lagos as a panelist." aria-label="Enlarge: DataFest Africa, Lagos">
+    <img src="assets/datafest-portrait.jpg" alt="Favour smiling in front of the DataFest Africa 2025 backdrop with a panelist badge" loading="lazy">
+  </button>
+  <figcaption class="chip">DataFest Africa, Lagos</figcaption>
+</figure></div>
+    </div>
+
+    <div class="collage">
+      <div class="collage-head"><h3>IWD &amp; hangouts</h3><p>I organised the International Women&#8217;s Day OAU Conference 2022, and as WIE Lead I hosted our school resumption hangout in February 2024.</p></div>
+      <div class="bento b-moments"><figure class="tile t1">
+  <button type="button" class="open" data-gallery="moments" data-index="0" data-src="assets/iwd-2022.jpg" data-cap="International Women&#x27;s Day OAU Conference 2022, theme: Gender Equality Today for a Sustainable Tomorrow. I was an organiser." aria-label="Enlarge: IWD 2022 · Organiser">
+    <img src="assets/iwd-2022.jpg" alt="The International Women&#x27;s Day OAU Conference 2022 organising team and speakers on stage" loading="lazy">
+  </button>
+  <figcaption class="chip">IWD 2022 · Organiser</figcaption>
+</figure>
+<figure class="tile t2">
+  <button type="button" class="open" data-gallery="moments" data-index="1" data-src="assets/hangout-2024.jpg" data-cap="The WIE school resumption hangout, February 2024. Community is also about showing up for each other." aria-label="Enlarge: WIE hangout · Feb 2024">
+    <img src="assets/hangout-2024.jpg" alt="A large group of young women smiling together on outdoor steps on campus" loading="lazy">
+  </button>
+  <figcaption class="chip">WIE hangout · Feb 2024</figcaption>
+</figure></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="agenda">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">04 · Manifesto</div><h2>The B.U.I.L.D. agenda</h2><p>Five letters, five promises. Built on what WiT already does well, and sized for how intense CMU-Africa really is.</p></div>
+    <div class="keep">
+      <h3>Keeping what works</h3>
+      <ul>
+        <li>International Women&#8217;s Day</li>
+        <li>Pinktober</li>
+        <li>Woman Crush Wednesday</li>
+        <li>Social hangouts</li>
+      </ul>
+    </div>
+<article class="pillar" id="agenda-b">
+  <div class="pillar-letter" aria-hidden="true">B</div>
+  <div class="pillar-body"><h3>Beyond the Classroom</h3><p class="lead">Real tech skills, built alongside your coursework.</p><ul><li><strong>A hands-on tech workshop every 2 months</strong><span>AI/ML, cloud, cybersecurity, web, product and UX</span></li><li><strong>Optional project teams</strong><span>For anyone who wants to build something together</span></li><li><strong>Demo Day</strong><span>Show what you built</span></li></ul></div>
+</article>
+<article class="pillar" id="agenda-u">
+  <div class="pillar-letter" aria-hidden="true">U</div>
+  <div class="pillar-body"><h3>Unlock Careers</h3><p class="lead">See where tech really happens, and get ready to walk in.</p><ul><li><strong>Inside Kigali Tech</strong><span>One company visit every semester</span></li><li><strong>Interview Ready</strong><span>CV and LinkedIn clinics, plus mock interviews before internship season</span></li><li><strong>The Opportunity Drop</strong><span>A monthly roundup of internships, fellowships, open source programs and tech conferences like PyCon and Deep Learning Indaba</span></li></ul></div>
+</article>
+<article class="pillar" id="agenda-i">
+  <div class="pillar-letter" aria-hidden="true">I</div>
+  <div class="pillar-body"><h3>Innovate &amp; Open Source</h3><p class="lead">From your first contribution to a winning proposal.</p><ul><li><strong>Open source pathway</strong><span>Get ready for GSoC, Outreachy, LFX and more</span></li><li><strong>Guided by a 2x GSoC participant</strong><span>Finding projects, first contributions and proposals that get accepted</span></li><li><strong>Annual WiT hackathon</strong><span>Plus team matching for outside competitions</span></li></ul></div>
+</article>
+<article class="pillar" id="agenda-l">
+  <div class="pillar-letter" aria-hidden="true">L</div>
+  <div class="pillar-body"><h3>Link with Women Leading in Tech</h3><p class="lead">Mentorship and real conversations with women ahead of us.</p><ul><li><strong>Mentorship pods</strong><span>Alumnae and professionals with small student groups, at a pace that works</span></li><li><strong>Up-close meetups</strong><span>Meet women doing well in tech, research and industry</span></li></ul></div>
+</article>
+<article class="pillar" id="agenda-d">
+  <div class="pillar-letter" aria-hidden="true">D</div>
+  <div class="pillar-body"><h3>Deliver &amp; Stay Accountable</h3><p class="lead">A club that listens, and shows its work.</p><ul><li><strong>Monthly suggestion box</strong><span>Share ideas anytime, anonymously if you want</span></li><li><strong>Semester feedback survey</strong><span>Tell us what is working and what is not</span></li><li><strong>Calendar out in week 1</strong><span>Plan club life around your schoolwork</span></li><li><strong>End-of-semester impact report</strong><span>Promised vs. delivered</span></li></ul></div>
+</article>
+  </div>
+</section>
+
+<section class="block" id="accountability">
+  <div class="wrap">
+    <div class="sec-head"><div class="num">05 · Accountability</div><h2>Hold me to it</h2></div>
+    <div class="acc">
+      <div>
+        <div class="quote">Promised vs. delivered.</div>
+        <p>Every promise on this page has a rhythm. At the end of each semester, I&#8217;ll publish an impact report that checks each line in this table against what actually happened.</p>
+        <p>And you don&#8217;t have to wait for the report: the suggestion box is open every month, anonymously if you prefer.</p>
+      </div>
+      <table class="trk">
+        <thead><tr><th scope="col">Promise</th><th scope="col">How often</th><th scope="col">Letter</th></tr></thead>
+        <tbody><tr><td>Hands-on workshops</td><td>Every 2 months</td><td><span class='lt'>B</span></td></tr><tr><td>Company visit</td><td>1 per semester</td><td><span class='lt'>U</span></td></tr><tr><td>The Opportunity Drop</td><td>Monthly</td><td><span class='lt'>U</span></td></tr><tr><td>Open source sessions</td><td>Before each GSoC, Outreachy and LFX season</td><td><span class='lt'>I</span></td></tr><tr><td>WiT hackathon</td><td>Once a year</td><td><span class='lt'>I</span></td></tr><tr><td>Suggestion box review</td><td>Monthly</td><td><span class='lt'>D</span></td></tr><tr><td>Feedback survey</td><td>Every semester</td><td><span class='lt'>D</span></td></tr><tr><td>Semester calendar</td><td>Week 1</td><td><span class='lt'>D</span></td></tr><tr><td>Impact report</td><td>End of every semester</td><td><span class='lt'>D</span></td></tr></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+</main>
+
+<section class="vote" id="vote">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Women in Tech Club, CMU-Africa</div>
+      <h2>Vote <span>Favour James (FJ)</span> for President.</h2>
+      <p>Let&#8217;s keep what works, build on that foundation, and grow together. #LetsBUILDWiT</p>
+    </div>
+    <div class="date-card">
+      <div class="eyebrow">Voting day</div>
+      <div class="d">Sat, Nov 21</div>
+      <div class="count" id="count"></div>
+      <div class="share"><button type="button" id="share">Copy link to share</button><output id="share-out" aria-live="polite"></output></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>FJ for WiT President · #LetsBUILDWiT</span>
+    <span><a href="https://favourj-bit.github.io/">favourj-bit.github.io</a></span>
+  </div>
+</footer>
+
+<dialog class="lb" id="lb" aria-label="Photo viewer">
+  <figure>
+    <img id="lb-img" alt="">
+    <figcaption id="lb-cap"></figcaption>
+    <div class="ctrl">
+      <button type="button" id="lb-prev">← Previous</button>
+      <button type="button" id="lb-close">Close</button>
+      <button type="button" id="lb-next">Next →</button>
+    </div>
+  </figure>
+</dialog>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var sw = document.getElementById('switch');
+  var lbl = document.getElementById('switch-label');
+  function setOn(on) {
+    root.classList.toggle('off', !on);
+    sw.setAttribute('aria-checked', on ? 'true' : 'false');
+    sw.setAttribute('aria-label', on ? 'Turn the colour off' : 'Turn the colour on');
+    lbl.textContent = on ? 'IT’S B.U.I.L.D. TIME' : 'FLIP THE SWITCH';
+  }
+  if (root.classList.contains('off')) {
+    setOn(false);
+    var auto = setTimeout(function () { setOn(true); }, 1600);
+  }
+  sw.addEventListener('click', function () { clearTimeout(auto); setOn(root.classList.contains('off')); });
+
+  // countdown to voting day (Saturday, November 21, 2026)
+  var count = document.getElementById('count');
+  var vote = new Date(2026, 10, 21);
+  var today = new Date(); today.setHours(0, 0, 0, 0);
+  var days = Math.round((vote - today) / 86400000);
+  if (days > 1) count.textContent = days + ' days to go';
+  else if (days === 1) count.textContent = 'Tomorrow';
+  else if (days === 0) count.textContent = 'Today is voting day';
+
+  // share
+  document.getElementById('share').addEventListener('click', function () {
+    var out = document.getElementById('share-out');
+    var url = location.href.split('#')[0];
+    try {
+      navigator.clipboard.writeText(url).then(function () { out.textContent = 'Link copied'; },
+        function () { out.textContent = url; });
+    } catch (e) { out.textContent = url; }
+  });
+
+  // lightbox
+  var lb = document.getElementById('lb'), img = document.getElementById('lb-img'), cap = document.getElementById('lb-cap');
+  var cur = null, idx = 0;
+  function items(g) { return Array.prototype.slice.call(document.querySelectorAll('.open[data-gallery="' + g + '"]')); }
+  function show(g, i) {
+    var list = items(g); idx = (i + list.length) % list.length; cur = g;
+    var b = list[idx];
+    img.src = b.dataset.src; img.alt = b.querySelector('img').alt; cap.textContent = b.dataset.cap;
+  }
+  document.querySelectorAll('.open').forEach(function (b) {
+    b.addEventListener('click', function () {
+      show(b.dataset.gallery, +b.dataset.index);
+      if (lb.showModal) lb.showModal(); else lb.setAttribute('open', '');
+    });
+  });
+  document.getElementById('lb-close').addEventListener('click', function () { lb.close(); });
+  document.getElementById('lb-prev').addEventListener('click', function () { show(cur, idx - 1); });
+  document.getElementById('lb-next').addEventListener('click', function () { show(cur, idx + 1); });
+  lb.addEventListener('click', function (e) { if (e.target === lb) lb.close(); });
+  lb.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') show(cur, idx - 1);
+    if (e.key === 'ArrowRight') show(cur, idx + 1);
+  });
+})();
+</script>
+</body>
+</html>
